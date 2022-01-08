@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/circular/CircularStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Circular Std';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/circular/CircularStd-Bold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'P22 Mackinac Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/mackinac/P22MackinacPro-Book_25.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'P22 Mackinac Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/mackinac/P22MackinacPro-Bold_16.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'P22 Mackinac Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('./fonts/mackinac/P22MackinacPro-ExtraBold_12.otf')
+    format('opentype');
+}
+
+@layer components {
+  html {
+    @apply text-common-white;
+  }
+}
