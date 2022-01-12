@@ -11,6 +11,7 @@ import IconButton from '@src/components/atoms/IconButton';
 import NextArrow from '@src/components/icons/NextArrow';
 import PrevArrow from '@src/components/icons/PrevArrow';
 import colors from '@src/utils/colors';
+import Flex from '../Flex';
 import clsx from 'clsx';
 
 const Carousel: FC<{ className?: string; arrows?: boolean }> = ({
@@ -91,7 +92,11 @@ const Carousel: FC<{ className?: string; arrows?: boolean }> = ({
         </div>
       )}
 
-      <div className="absolute bottom-2 left-50% transform -translate-x-50%">
+      <Flex
+        justify="center"
+        alignItems="center"
+        className="fixed bottom-0 w-full border border-secondary-main"
+      >
         <Dots
           scrollSnaps={scrollSnaps}
           scrollTo={scrollTo}
@@ -99,7 +104,7 @@ const Carousel: FC<{ className?: string; arrows?: boolean }> = ({
           size="small"
           color="primary"
         />
-      </div>
+      </Flex>
     </>
   );
 };

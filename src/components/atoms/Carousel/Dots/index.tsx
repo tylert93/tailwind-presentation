@@ -11,11 +11,7 @@ const Dots = ({
   size,
 }: IDotProps) => {
   return scrollSnaps.length > 1 ? (
-    <TwFlex
-      justify="center"
-      className="pt-1.25 pb-2"
-      data-testid="dots-container"
-    >
+    <TwFlex justify="center" className="py-3" data-testid="dots-container">
       {scrollSnaps.map((_, index) => (
         <DotButton
           key={index}

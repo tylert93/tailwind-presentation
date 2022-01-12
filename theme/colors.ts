@@ -76,7 +76,7 @@ module.exports = {
     default: '#f5f5f5',
   },
   hyperlink: {
-    main: '#0A589B',
+    main: '#0000EE',
   },
   text: {
     secondary: '#4D5471',
@@ -102,6 +102,7 @@ module.exports = {
   placeholderText: {
     main: '#B3B6C2',
   },
+  highlight: '#FC4C02',
   divider: 'rgba(0, 0, 0, 0.12)',
   inherit: 'inherit',
 };

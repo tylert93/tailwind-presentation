@@ -31,7 +31,7 @@ const DotButton = ({
   return (
     <button
       className={clsx(
-        selected ? colorClasses[color] : 'bg-common-white',
+        selected ? colorClasses[color] : 'bg-secondary-main',
         sizeClasses[size],
         selected ? 'cursor-default' : 'cursor-pointer',
         'rounded-50%'

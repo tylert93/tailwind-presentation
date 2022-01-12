@@ -1,42 +1,58 @@
 import React from 'react';
-import Carousel from '@src/components/atoms/Carousel';
-import Slide from '@src/components/atoms/Carousel/Slide';
-import Code from '@src/components/atoms/Code';
 import Flex from '@src/components/atoms/Flex';
 import Typography from '@src/components/atoms/Typography';
-import HyperGrid from '@src/components/atoms/HyperGrid';
+import Image from 'next/image';
+import Plus from '@src/components/icons/Plus';
+import NextArrow from '@src/components/icons/NextArrow';
+import StyledLink from '@src/components/atoms/StyledLink';
+import Link from 'next/link';
+import colors from '@src/utils/colors';
 
-const EmblaCarousel = () => {
+const IndexPage = () => {
   return (
-    <Carousel className="h-[100vh] w-[100vw]">
-      <Slide heading="Slide 1">
-        <Flex justify="center" alignItems="center" className="h-full p-4">
-          <Typography className="text-4xl text-center">
-            This is a project for creating react based presentations
-          </Typography>
-          <Typography className="text-4xl text-center">
-            It uses <code>embla-carousel-react</code> to transition between
-            slide. You can navigate using the dot buttons below or your arrow
-            keys
-          </Typography>
-        </Flex>
-      </Slide>
-      <Slide heading="Slide 2">
-        <HyperGrid container className="p-4">
-          <HyperGrid container item justify="center" alignItems="center" xs>
-            <Typography className="text-2xl mx-auto">
-              The <code>Code</code> component utilises{' '}
-              <code>prism-react-renderer</code>, allowing you to include syntax
-              highlighted code snippets
-            </Typography>
-          </HyperGrid>
-          <HyperGrid item xs className="mt-4">
-            <Code />
-          </HyperGrid>
-        </HyperGrid>
-      </Slide>
-    </Carousel>
+    <Flex
+      justify="center"
+      alignItems="center"
+      className="h-[100vh] w-[100vw] p-4"
+    >
+      <Flex
+        direction="col"
+        justify="center"
+        alignItems="center"
+        className="w-[300px]"
+      >
+        <Image
+          src="/tailwindcss-icon.svg"
+          alt="tailwind icon"
+          width={200}
+          height={130}
+        />
+        <Typography variant="titleXXXL" className="mt-2">
+          tailwind css
+        </Typography>
+      </Flex>
+
+      <Plus
+        width={50}
+        height={50}
+        color={colors.secondary.main}
+        className="ml-5 mr-8"
+      />
+      <Image
+        src="/boomin-logo.svg"
+        alt="boomin logo"
+        width={300}
+        height={100}
+      />
+      <div className="absolute bottom-4 right-8">
+        <Link href="/one" passHref>
+          <StyledLink className="flex items-center">
+            Start <NextArrow width={20} height={20} className="ml-2" />
+          </StyledLink>
+        </Link>
+      </div>
+    </Flex>
   );
 };
 
-export default EmblaCarousel;
+export default IndexPage;

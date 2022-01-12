@@ -1,29 +1,22 @@
 import React from 'react';
+import { ICodeProps } from './types';
 import clsx from 'clsx';
 import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
+import theme from 'prism-react-renderer/themes/palenight';
 
-const exampleCode = `
-import React, { FC } from 'react';
-
-const ExampleComponent: FC = ({ children }) => {
-
-  return (
-    <div>
-      {children}
-    </div>
-  );
-};
-
-export default ExampleComponent;
-
-`.trim();
-
-const Code = () => (
-  <Highlight {...defaultProps} code={exampleCode} language="tsx" theme={theme}>
+const Code = ({ language = 'tsx', snippet = '' }: ICodeProps) => (
+  <Highlight
+    {...defaultProps}
+    code={snippet.trim()}
+    language={language}
+    theme={theme}
+  >
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <pre
-        className={clsx('text-left m-0 p-3 leading-5 rounded', className)}
+        className={clsx(
+          'text-left m-0 p-3 leading-5 rounded overflow-y-scroll',
+          className
+        )}
         style={style}
       >
         {tokens.map((line, i) => (

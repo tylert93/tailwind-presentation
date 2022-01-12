@@ -45,6 +45,6 @@
 
 @layer components {
   html {
-    @apply text-common-white;
+    @apply text-secondary-main;
   }
 }
