@@ -9,7 +9,7 @@ import InlineCode from '@src/components/atoms/InlineCode';
 
 const snippetOne = `<div className="flex justify-around border-2 border-secondary-main p-2">
 
-    <div className="h-10 w-10 bg-primary-main" />
+    <div className="h-10 w-20 bg-primary-main" />
 
     <div className="h-10 w-10 bg-info-main rounded" />
 
@@ -43,6 +43,8 @@ const PageOne = () => {
           <a
             href="https://tailwindcss.com/docs/installation"
             className="text-hyperlink-main hover:underline"
+            target="_blank"
+            rel="noreferrer"
           >
             documentation
           </a>{' '}

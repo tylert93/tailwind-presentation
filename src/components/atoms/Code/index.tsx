@@ -14,7 +14,7 @@ const Code = ({ language = 'tsx', snippet = '' }: ICodeProps) => (
     {({ className, style, tokens, getLineProps, getTokenProps }) => (
       <pre
         className={clsx(
-          'text-left m-0 p-3 leading-5 rounded overflow-y-scroll',
+          'text-left m-0 p-3 leading-5 rounded overflow-y-auto',
           className
         )}
         style={style}

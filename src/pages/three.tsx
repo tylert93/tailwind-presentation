@@ -22,12 +22,10 @@ module.exports = {
     // ...
   }
 }
-
-
 `;
 
 const snippetTwo = `
-
+// color = 'primary'
 const Example = ({ color }) => {
 
   return <div className={\`bg-$\{color}-main\`} />;
@@ -36,7 +34,7 @@ const Example = ({ color }) => {
 `;
 
 const snippetThree = `
-
+// color = 'primary'
 const Example = ({ color }) => {
 
     const colorClasses = {

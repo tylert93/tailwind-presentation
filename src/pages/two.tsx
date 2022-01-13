@@ -75,6 +75,8 @@ const PageTwo = () => {
           <a
             href="https://github.com/tailwindlabs/tailwindcss/blob/master/stubs/defaultConfig.stub.js"
             className="text-hyperlink-main hover:underline"
+            target="_blank"
+            rel="noreferrer"
           >
             default theme
           </a>{' '}
@@ -110,7 +112,7 @@ const PageTwo = () => {
         </div>
 
         <Typography variant="bodyXL" className="mt-4">
-          There aren&apos;t any namiing conventions you have to stick you.
+          There aren&apos;t any naming conventions you have to stick you.
           Whatever values you add to the{' '}
           <InlineCode>tailwind.config.js</InlineCode> will determine the classes
           available to you and the styles they will apply.
