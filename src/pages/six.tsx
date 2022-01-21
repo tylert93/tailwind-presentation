@@ -4,10 +4,14 @@ import Typography from '@src/components/atoms/Typography';
 import Code from '@src/components/atoms/Code';
 import PageNav from '@src/components/molecules/PageNav';
 import InlineCode from '@src/components/atoms/InlineCode';
+import Flex from '@src/components/atoms/Flex';
+import Image from 'next/image';
 
 const snippetOne = `
 <Container className="px-3 pt-3.5 pb-4 sm:pt-7 sm:pb-11">
+
   <HyperGrid container justify="between">
+
     <HyperGrid item xs={12} md={6}>
       <MatchMakerV2 className="h-2.5 w-19.25 mt-3.5 mb-1.5" />
       <Typography
@@ -26,6 +30,7 @@ const snippetOne = `
         Learn more
       </Button>
     </HyperGrid>
+
     <HyperGrid
       item
       className="relative min-h-30.5 sm:min-h-50"
@@ -37,11 +42,13 @@ const snippetOne = `
         alt="MatchMaker Family"
       />
     </HyperGrid>
+
   </HyperGrid>
+
 </Container>
 `;
 
-const PageFive = () => {
+const PageSix = () => {
   return (
     <HyperGrid container justify="center" className="py-10">
       <HyperGrid item xs={8}>
@@ -129,10 +136,65 @@ const PageFive = () => {
           <Code snippet={snippetOne} />
         </div>
 
-        <PageNav prevLink="/five" className="mt-8" />
+        <Typography variant="bodyXL" className="mb-4">
+          Many of these components are polymorphic. Their base HTML tag can be
+          changed using the <InlineCode>as</InlineCode> prop. The example below
+          shows that an error occurs when trying to add a{' '}
+          <InlineCode>href</InlineCode> to a <InlineCode>typography</InlineCode>{' '}
+          component. This is becasue its deafult HTML tag is a span. Using the{' '}
+          <InlineCode>as</InlineCode> prop to cast the component as a link will
+          allow it to take a <InlineCode>href</InlineCode> and make this error
+          go away.
+        </Typography>
+
+        <Flex justify="center" className="my-8">
+          <Image
+            src="/polymorphic.gif"
+            alt="polymorphic"
+            width={600}
+            height={314}
+          />
+        </Flex>
+
+        <Typography variant="bodyXL" className="mb-4">
+          One other area we rely on Material UI for is our{' '}
+          <InlineCode>useMediaQuery</InlineCode> and{' '}
+          <InlineCode>useMedia</InlineCode> hooks, so these have been rebuilt
+          using CSS and the screen sizes stored in the tailwind theme. This
+          includes the following <InlineCode>useMedia</InlineCode> hooks:
+        </Typography>
+
+        <ul className="list-disc list-inside ml-8 my-4">
+          <li className="my-2">
+            <InlineCode>useSmallMobile</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useMobile</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useIsOverMobile</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useTablet</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useTabletDown</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useDesktop</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useLargeDesktop</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>useIsMobileScreen</InlineCode>
+          </li>
+        </ul>
+
+        <PageNav prevLink="/five" nextLink="/seven" className="mt-8" />
       </HyperGrid>
     </HyperGrid>
   );
 };
 
-export default PageFive;
+export default PageSix;

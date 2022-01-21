@@ -67,6 +67,15 @@ const PageThree = () => {
           the paths to all the files which contain tailwind utility classes.
         </Typography>
 
+        <Typography variant="bodyXL" className="mt-4">
+          <span className="text-warning-main bg-warning-200 text-base py-0.5 px-1 mx-0.5 rounded-sm">
+            NOTE :
+          </span>{' '}
+          in tailwind version <InlineCode>3.0.0</InlineCode> the{' '}
+          <InlineCode>purge</InlineCode> property was renamed to{' '}
+          <InlineCode>components</InlineCode>
+        </Typography>
+
         <div className="my-8">
           <Code snippet={snippetOne} />
         </div>
