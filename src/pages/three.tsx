@@ -38,8 +38,8 @@ const snippetThree = `
 const Example = ({ color }) => {
 
     const colorClasses = {
-      primary: bg-primary-main,
-      secondary: bg-secondary-main
+      primary: 'bg-primary-main',
+      secondary: 'bg-secondary-main'
     }
 
 
