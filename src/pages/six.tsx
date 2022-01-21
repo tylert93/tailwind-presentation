@@ -5,37 +5,40 @@ import Code from '@src/components/atoms/Code';
 import PageNav from '@src/components/molecules/PageNav';
 import InlineCode from '@src/components/atoms/InlineCode';
 
-const snippetOne = `//tailwind.css
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@font-face {
-  font-family: 'Circular Std';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('./fonts/circular/CircularStd-Book.otf') format('opentype');
-}
-
-@layer components {
-
-  .g-elevation-1 {
-    box-shadow: 0px 4px 8px rgb(0 0 0 / 12%);
-  }
- 
-  .g-smartVal-adornment::after {
-    @apply absolute z-0 bg-primary-main -right-118.5 -bottom-84.5 md:-right-110 md:-bottom-90;
-    content: '';
-    transform-origin: top left;
-    transform: matrix(0.75, -0.7, 0.62, 0.75, 0, 0);
-    width: 1200px;
-    height: 787.2px;
-    border-radius: 66px;
-  }
-  
-}
+const snippetOne = `
+<Container className="px-3 pt-3.5 pb-4 sm:pt-7 sm:pb-11">
+  <HyperGrid container justify="between">
+    <HyperGrid item xs={12} md={6}>
+      <MatchMakerV2 className="h-2.5 w-19.25 mt-3.5 mb-1.5" />
+      <Typography
+        variant="titleXXXL"
+      >
+        Target your dream street and get matched.
+      </Typography>
+      
+      <Button
+        color="primary"
+        variant="contained"
+        className="h-6 w-full mt-3 mb-2.75 sm:w-20.5 sm:mt-4"
+        href="/about-boomin-matchmaker"
+        aria-label="Learn more about MatchMaker"
+      >
+        Learn more
+      </Button>
+    </HyperGrid>
+    <HyperGrid
+      item
+      className="relative min-h-30.5 sm:min-h-50"
+      xs={12}
+      md={5}
+    >
+      <img
+        src={'\${ASSET_PREFIX}/images/matchMaker-v2/mm-family.png'}
+        alt="MatchMaker Family"
+      />
+    </HyperGrid>
+  </HyperGrid>
+</Container>
 `;
 
 const PageFive = () => {
@@ -43,30 +46,90 @@ const PageFive = () => {
     <HyperGrid container justify="center" className="py-10">
       <HyperGrid item xs={8}>
         <Typography variant="h3" className="text-primary-main mb-4">
-          Extracting classes with @apply
+          Design approach
         </Typography>
 
         <Typography variant="bodyXL" className="mb-4">
-          Even though Just-in-Time mode gives you the flexibility to create a
-          class on the fly for any CSS property, having loads of arbitrary
-          classes in the <InlineCode>className</InlineCode> prop can become very
-          messy. In some cases it might be better to use vanilla CSS. Luckily,
-          tailwind makes it very use to integrate its utility classes with
-          vanilla CSS.
+          I created a UI component library using Tailwind. The full library of
+          compoents can be found in{' '}
+          <InlineCode>&apos;shared/tailwind/components&apos;</InlineCode>
+          includes the following:
         </Typography>
 
+        <ul className="list-disc list-inside ml-8 my-4">
+          <li className="my-2">
+            <InlineCode>AppBar</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Button</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>ClickAwayListener</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Collapse</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Column</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Container</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Dialog</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Divider</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>DotButton</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Drawer</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Flex</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Grid</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>HyperGrid</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>IconButton</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Image</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>List</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Menu</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>StyledLink</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>TextField</InlineCode>
+          </li>
+          <li className="my-2">
+            <InlineCode>Typography</InlineCode>
+          </li>
+        </ul>
+
         <Typography variant="bodyXL" className="mb-4">
-          In the css where tailwind is being imported, a class can be created
-          inside the <InlineCode>components</InlineCode> layer. This allows the
-          classes to contain pure CSS as well as all of the tailwind utility
-          classes by using the <InlineCode>@apply</InlineCode> decorator.
+          Most of these components ahve been based upon componets from the
+          Material UI component library. This allows them to be easily
+          integrated with the website without changing it&apos;s design.
         </Typography>
 
         <div className="my-8">
           <Code snippet={snippetOne} />
         </div>
 
-        <PageNav prevLink="/four" nextLink="/six" className="mt-8" />
+        <PageNav prevLink="/five" className="mt-8" />
       </HyperGrid>
     </HyperGrid>
   );

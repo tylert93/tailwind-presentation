@@ -26,7 +26,7 @@ const snippetOne = `//tailwind.css
   }
  
   .g-smartVal-adornment::after {
-    @apply absolute z-0 bg-primary-main -right-118.5 -bottom-84.5 md:-right-110 md:-bottom-90;
+    @apply absolute z-0 bg-primary-main top:0 md:top-90;
     content: '';
     transform-origin: top left;
     transform: matrix(0.75, -0.7, 0.62, 0.75, 0, 0);

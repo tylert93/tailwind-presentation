@@ -3,10 +3,9 @@ import Flex from '@src/components/atoms/Flex';
 import Typography from '@src/components/atoms/Typography';
 import Image from 'next/image';
 import Plus from '@src/components/icons/Plus';
-import NextArrow from '@src/components/icons/NextArrow';
-import StyledLink from '@src/components/atoms/StyledLink';
-import Link from 'next/link';
 import colors from '@src/utils/colors';
+import PageNav from '@src/components/molecules/PageNav';
+import HyperGrid from '@src/components/atoms/HyperGrid';
 
 const IndexPage = () => {
   return (
@@ -44,13 +43,12 @@ const IndexPage = () => {
         width={300}
         height={100}
       />
-      <div className="absolute bottom-4 right-8">
-        <Link href="/one" passHref>
-          <StyledLink className="flex items-center">
-            Start <NextArrow width={20} height={20} className="ml-2" />
-          </StyledLink>
-        </Link>
-      </div>
+
+      <HyperGrid container justify="center" className="absolute bottom-10">
+        <HyperGrid item xs={8}>
+          <PageNav nextLink="/one" />
+        </HyperGrid>
+      </HyperGrid>
     </Flex>
   );
 };
